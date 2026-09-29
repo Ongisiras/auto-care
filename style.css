@@ -1,0 +1,420 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f5f7;
+  color: #202124;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================= LOGIN ================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #8b0000,
+    #d00000
+  );
+}
+
+.login-box {
+  width: 400px;
+  max-width: 90%;
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.logo {
+  font-size: 50px;
+  text-align: center;
+}
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.login-box label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.login-info {
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #b40000;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #8d0000;
+}
+
+.btn-secondary {
+  background: #455a64;
+  color: white;
+}
+
+.full {
+  width: 100%;
+  margin-top: 25px;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+  height: 70px;
+  background: #b40000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-left h2 {
+  margin: 0;
+}
+
+.header-left span {
+  font-size: 12px;
+  opacity: .8;
+}
+
+.menu-button {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logout {
+  border: none;
+  background: white;
+  color: #b40000;
+  padding: 9px 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+aside {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  bottom: 0;
+  width: 230px;
+  background: #20252b;
+  padding: 20px 12px;
+}
+
+.sidebar-title {
+  color: #aaa;
+  font-size: 12px;
+  margin: 10px;
+}
+
+aside button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: white;
+  text-align: left;
+  padding: 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+aside button:hover {
+  background: #363c43;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+  margin-left: 230px;
+  padding: 25px;
+}
+
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-title h1 {
+  margin-bottom: 5px;
+}
+
+.page-title p {
+  color: #777;
+}
+
+
+/* ================= CARD ================= */
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+
+/* ================= STAT ================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+.stat-card span {
+  color: #777;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5d9dd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #ffcccc;
+  border-color: #b40000;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-area {
+  margin-top: 15px;
+}
+
+
+/* ================= SIGNATURE ================= */
+
+.signature-area {
+  margin-top: 20px;
+}
+
+#signature {
+  display: block;
+  width: 100%;
+  height: 180px;
+  background: white;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  touch-action: none;
+}
+
+
+/* ================= ACTION ================= */
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #f4f5f6;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+
+  aside {
+    width: 190px;
+  }
+
+  main {
+    margin-left: 190px;
+  }
+
+}
+
+
+@media(max-width:700px) {
+
+  header {
+    padding: 0 15px;
+  }
+
+  aside {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 8px;
+    overflow-x: auto;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  aside button {
+    white-space: nowrap;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+}
