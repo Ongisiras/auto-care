@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AutoCare Check</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginPage" class="login-page">
+
+  <div class="login-box">
+
+    <div class="logo">🚗</div>
+
+    <h1>AutoCare Check</h1>
+
+    <p class="subtitle">
+      Vehicle Inspection System
+    </p>
+
+    <label>Username</label>
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Username"
+      value="teknisi"
+    >
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      value="123"
+    >
+
+    <button
+      class="btn btn-primary full"
+      onclick="login()"
+    >
+      LOGIN
+    </button>
+
+    <p class="login-info">
+      Demo: teknisi / 123
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ================= APLIKASI ================= -->
+
+<div id="app" class="hidden">
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="header-left">
+
+      <div class="menu-button" onclick="toggleMenu()">
+        ☰
+      </div>
+
+      <div>
+
+        <h2>AutoCare Check</h2>
+
+        <span>
+          Vehicle Inspection System
+        </span>
+
+      </div>
+
+    </div>
+
+    <button
+      class="logout"
+      onclick="logout()"
+    >
+      Keluar
+    </button>
+
+  </header>
+
+
+  <!-- SIDEBAR -->
+
+  <aside id="sidebar">
+
+    <div class="sidebar-title">
+      MENU
+    </div>
+
+    <button onclick="showPage('dashboard')">
+      🏠 Dashboard
+    </button>
+
+    <button onclick="showPage('inspection')">
+      🚗 Pemeriksaan Baru
+    </button>
+
+    <button onclick="showPage('history')">
+      📋 Riwayat
+    </button>
+
+  </aside>
+
+
+  <!-- CONTENT -->
+
+  <main>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboardPage" class="page">
+
+      <div class="page-title">
+
+        <div>
+
+          <h1>Dashboard</h1>
+
+          <p>
+            Selamat datang di AutoCare Check
+          </p>
+
+        </div>
+
+        <button
+          class="btn btn-primary"
+          onclick="showPage('inspection')"
+        >
+          + Pemeriksaan Baru
+        </button>
+
+      </div>
+
+
+      <div class="stats">
+
+        <div class="stat-card">
+
+          <span>Total Pemeriksaan</span>
+
+          <strong id="totalData">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <span>Pemeriksaan Hari Ini</span>
+
+          <strong id="todayData">
+            0
+          </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <span>Teknisi Aktif</span>
+
+          <strong>
+            1
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <h2>Pemeriksaan Terbaru</h2>
+
+        <div id="latestData">
+
+          <div class="empty">
+            Belum ada pemeriksaan.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= PEMERIKSAAN ================= -->
+
+    <section
+      id="inspectionPage"
+      class="page hidden"
+    >
+
+      <div class="page-title">
+
+        <div>
+
+          <h1>Pemeriksaan Kendaraan</h1>
+
+          <p>
+            Masukkan data kendaraan dan hasil pemeriksaan
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- DATA KENDARAAN -->
+
+      <div class="card">
+
+        <h2>🚗 Data Kendaraan</h2>
+
+        <div class="form-grid">
+
+
+          <div>
+
+            <label>Nopol *</label>
+
+            <input
+              id="nopol"
+              placeholder="N 1234 AB"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label>Kilometer *</label>
+
+            <input
+              id="km"
+              type="number"
+              placeholder="50000"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label>Nama Customer</label>
+
+            <input
+              id="customer"
+              placeholder="Nama customer"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label>Tipe Kendaraan</label>
+
+            <input
+              id="vehicle"
+              placeholder="Avanza / Innova / Yaris"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label>Tanggal</label>
+
+            <input
+              id="date"
+              type="date"
+            >
+
+          </div>
+
+
+          <div>
+
+            <label>Teknisi</label>
+
+            <input
+              id="technician"
+              value="Teknisi"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- HASIL PEMERIKSAAN -->
+
+      <div class="card">
+
+        <h2>🔧 Hasil Pemeriksaan</h2>
+
+        <div class="form-grid">
+
+
+          <div>
+
+            <label>Body Kendaraan</label>
+
+            <textarea
+              id="body"
+              placeholder="Kondisi body kendaraan..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Aki</label>
+
+            <textarea
+              id="battery"
+              placeholder="Kondisi aki..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Ban</label>
+
+            <textarea
+              id="tires"
+              placeholder="Tekanan, tapak, keausan..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Oli Mesin</label>
+
+            <textarea
+              id="engineOil"
+              placeholder="Level dan kondisi oli..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Coolant</label>
+
+            <textarea
+              id="coolant"
+              placeholder="Level dan kondisi coolant..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Lampu</label>
+
+            <textarea
+              id="lights"
+              placeholder="Lampu utama, rem, sein..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>V-Belt</label>
+
+            <textarea
+              id="belt"
+              placeholder="Kondisi V-Belt..."
+            ></textarea>
+
+          </div>
+
+
+          <div>
+
+            <label>Instrument Panel & Kelistrikan</label>
+
+            <textarea
+              id="electrical"
+              placeholder="Indikator dan kelistrikan..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <label>Catatan / Rekomendasi</label>
+
+        <textarea
+          id="notes"
+          placeholder="Rekomendasi untuk customer..."
+        ></textarea>
+
+
+        <div class="form-grid photo-area">
+
+          <div>
+
+            <label>📷 Foto Kendaraan</label>
+
+            <input
+              type="file"
+              id="photo"
+              accept="image/*"
+              capture="environment"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="signature-area">
+
+          <label>✍️ Tanda Tangan Customer</label>
+
+          <canvas id="signature"></canvas>
+
+          <button
+            class="btn btn-secondary"
+            onclick="clearSignature()"
+          >
+            Hapus Tanda Tangan
+          </button>
+
+        </div>
+
+
+        <div class="actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="saveInspection()"
+          >
+            💾 Simpan Pemeriksaan
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            onclick="resetForm()"
+          >
+            Reset
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= RIWAYAT ================= -->
+
+    <section
+      id="historyPage"
+      class="page hidden"
+    >
+
+      <div class="page-title">
+
+        <div>
+
+          <h1>📋 Riwayat Pemeriksaan</h1>
+
+          <p>
+            Semua pemeriksaan kendaraan
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <input
+          class="search"
+          id="search"
+          placeholder="🔎 Cari nopol, customer atau kendaraan..."
+          oninput="renderHistory()"
+        >
+
+
+        <div class="table-container">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>Tanggal</th>
+
+                <th>Nopol</th>
+
+                <th>Customer</th>
+
+                <th>Kendaraan</th>
+
+                <th>KM</th>
+
+                <th>Aksi</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="historyTable">
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
